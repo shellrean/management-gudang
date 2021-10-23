@@ -2,7 +2,9 @@ package com.shellrean.management.barang;
 
 import com.shellrean.management.barang.constant.TipeBarangConstant;
 import com.shellrean.management.barang.domain.dao.Barang;
+import com.shellrean.management.barang.domain.dao.Stok;
 import com.shellrean.management.barang.repository.BarangRepository;
+import com.shellrean.management.barang.repository.StockRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +19,7 @@ public class BarangApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(BarangRepository barangRepository) {
+	CommandLineRunner commandLineRunner(BarangRepository barangRepository, StockRepository stockRepository) {
 		return  (args) -> {
 			Barang barang1 = Barang.builder()
 					.id(1l)
@@ -32,7 +34,20 @@ public class BarangApplication {
 					.berat(2)
 					.categori(TipeBarangConstant.TIPE_ELEKTRONIK)
 					.build();
+
+			Stok stok1 = Stok.builder()
+					.barangId(1l)
+					.id(1l)
+					.stok(0)
+					.build();
+			Stok stok2 = Stok.builder()
+					.barangId(2l)
+					.id(2l)
+					.stok(0)
+					.build();
+
 			barangRepository.saveAll(List.of(barang1, barang2));
+			stockRepository.saveAll(List.of(stok1, stok2));
 		};
 	}
 }
