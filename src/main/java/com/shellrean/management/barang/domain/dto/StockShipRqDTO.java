@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class StockShipRqDTO {
     private Long barangId;
+    private Long shipperId;
     private Integer stock;
     private String tipe;
 }

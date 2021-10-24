@@ -1,31 +1,22 @@
 package com.shellrean.management.barang.domain.dao;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
+@Entity
+@Table(name = "tbl_shipper")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Builder
-@Table(name = "tbl_ship")
-public class Ship {
+public class Shipper {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long barangId;
+    private String nama;
 
-    private Long shipperId;
-
-    private Integer stok;
-
-    private String tipe;
-
-    private Date tanggal;
+    private String codeShipper;
 }

@@ -15,4 +15,8 @@ public class ShipService {
     public List<Ship> getShipByBarang(Long id) {
         return shipRepository.findByBarangId(id);
     }
+
+    public List<Ship> findShipByShipper(Long id) {
+        return shipRepository.findByShipperId(id);
+    }
 }

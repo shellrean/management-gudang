@@ -39,6 +39,7 @@ public class StockService {
 
         Ship ship = Ship.builder()
                 .barangId(req.getBarangId())
+                .shipperId(req.getShipperId())
                 .stok(req.getStock())
                 .tipe(req.getTipe())
                 .tanggal(new Date())
