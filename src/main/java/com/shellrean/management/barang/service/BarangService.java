@@ -1,7 +1,7 @@
 package com.shellrean.management.barang.service;
 
 import com.shellrean.management.barang.domain.dao.Barang;
-import com.shellrean.management.barang.domain.dao.Stok;
+import com.shellrean.management.barang.domain.dao.Stock;
 import com.shellrean.management.barang.repository.BarangRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class BarangService {
     private BarangRepository barangRepository;
 
     @Autowired
-    private StokService stokService;
+    private StockService stokService;
 
     public List<Barang> getAllBarang() {
         return barangRepository.findAll();
@@ -30,7 +30,7 @@ public class BarangService {
         barang =  barangRepository.save(barang);
 
         if (isCreated) {
-            Stok stok = Stok.builder()
+            Stock stok = Stock.builder()
                     .barangId(barang.getId())
                     .stok(0)
                     .build();

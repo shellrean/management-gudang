@@ -1,7 +1,9 @@
 package com.shellrean.management.barang.controller;
 
 import com.shellrean.management.barang.domain.dao.Barang;
+import com.shellrean.management.barang.domain.dao.Ship;
 import com.shellrean.management.barang.service.BarangService;
+import com.shellrean.management.barang.service.ShipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,9 @@ public class BarangController {
 
     @Autowired
     private BarangService barangService;
+
+    @Autowired
+    private ShipService shipService;
 
     @GetMapping("barang")
     public List<Barang> getAllBarang() {
@@ -32,5 +37,10 @@ public class BarangController {
     @DeleteMapping("barang/{id}")
     public void deleteBarang(@PathVariable Long id) {
         barangService.deleteBarang(id);
+    }
+
+    @GetMapping("barang/{id}/ship")
+    public List<Ship> getBarangShip(@PathVariable Long id) {
+        return shipService.getShipByBarang(id);
     }
 }

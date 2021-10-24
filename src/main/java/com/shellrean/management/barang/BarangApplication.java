@@ -2,7 +2,7 @@ package com.shellrean.management.barang;
 
 import com.shellrean.management.barang.constant.TipeBarangConstant;
 import com.shellrean.management.barang.domain.dao.Barang;
-import com.shellrean.management.barang.domain.dao.Stok;
+import com.shellrean.management.barang.domain.dao.Stock;
 import com.shellrean.management.barang.repository.BarangRepository;
 import com.shellrean.management.barang.repository.StockRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -35,12 +35,12 @@ public class BarangApplication {
 					.categori(TipeBarangConstant.TIPE_ELEKTRONIK)
 					.build();
 
-			Stok stok1 = Stok.builder()
+			Stock stok1 = Stock.builder()
 					.barangId(1l)
 					.id(1l)
 					.stok(0)
 					.build();
-			Stok stok2 = Stok.builder()
+			Stock stok2 = Stock.builder()
 					.barangId(2l)
 					.id(2l)
 					.stok(0)
