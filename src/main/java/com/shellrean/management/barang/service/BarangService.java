@@ -20,7 +20,6 @@ public class BarangService {
     private StockService stokService;
 
     public List<BarangStockData> getAllBarang() {
-//        return barangRepository.findAll();
         return barangRepository.barangAllWithStock();
     }
 
