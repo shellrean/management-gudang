@@ -2,6 +2,7 @@ package com.shellrean.management.barang.service;
 
 import com.shellrean.management.barang.domain.dao.Ship;
 import com.shellrean.management.barang.domain.dao.Shipper;
+import com.shellrean.management.barang.domain.dto.ShippingTractData;
 import com.shellrean.management.barang.repository.ShipperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class ShipperService {
         shipperRepository.deleteById(id);
     }
 
-    public List<Ship> getShipByShipper(Long id) {
+    public List<ShippingTractData> getShipByShipper(Long id) {
         return shipService.findShipByShipper(id);
     }
 }

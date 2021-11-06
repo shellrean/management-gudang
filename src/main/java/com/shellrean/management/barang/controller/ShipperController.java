@@ -2,6 +2,7 @@ package com.shellrean.management.barang.controller;
 
 import com.shellrean.management.barang.domain.dao.Ship;
 import com.shellrean.management.barang.domain.dao.Shipper;
+import com.shellrean.management.barang.domain.dto.ShippingTractData;
 import com.shellrean.management.barang.service.ShipperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class ShipperController {
     }
 
     @GetMapping("shipper/{id}/shipping")
-    public List<Ship> getShipShipper(@PathVariable Long id) {
+    public List<ShippingTractData> getShipShipper(@PathVariable Long id) {
         return shipperService.getShipByShipper(id);
     }
 }

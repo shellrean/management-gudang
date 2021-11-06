@@ -2,6 +2,7 @@ package com.shellrean.management.barang.controller;
 
 import com.shellrean.management.barang.domain.dao.Barang;
 import com.shellrean.management.barang.domain.dao.Ship;
+import com.shellrean.management.barang.domain.dto.BarangStockData;
 import com.shellrean.management.barang.service.BarangService;
 import com.shellrean.management.barang.service.ShipService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class BarangController {
     private ShipService shipService;
 
     @GetMapping("barang")
-    public List<Barang> getAllBarang() {
+    public List<BarangStockData> getAllBarang() {
         return barangService.getAllBarang();
     }
 
